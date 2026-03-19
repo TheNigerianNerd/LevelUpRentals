@@ -9,11 +9,20 @@ To build a "Zero to Hero" rental platform that handles:
 2. **Digital Licenses:** Scalable, concurrent access using PostgreSQL JSONB (NoSQL) patterns.
 3. **Cloud Security:** Azure Key Vault for secret management and Managed Identities.
 
-## 🛠️ Tech Stack
-- **Frontend:** React (Vite) + Tailwind CSS
-- **Backend:** .NET 8 (User Choice)
-- **Database:** Azure Database for PostgreSQL (Relational + JSONB)
-- **Cloud:** Azure App Service, Azure Key Vault
+## 🛠️ Current Tech Stack
+- **Framework:** .NET 10 (C#)
+- **Database:** PostgreSQL + EF Core 10
+- **Security:** Azure Key Vault (Managed Identity via Azure CLI)
+- **API Docs:** Native ASP.NET Core OpenAPI (`/openapi/v1.json`)
+
+## ✅ Completed Features
+- **Cloud-Local Bridge:** Securely fetching DB strings from Azure KV.
+- **Physical Inventory:** Atomic transactions to handle disc stock.
+- **Auto-Seeding:** Database initializes with Elden Ring, Halo, and Mario Kart.
+
+## 🔜 Next Milestone: Sprint 2 (Digital Pivot)
+- Transitioning `Game.cs` to a **Hybrid Schema**.
+- Implementing **JSONB** for flexible digital metadata (License Keys, File Sizes).
 
 ## 🏗️ Architecture Decisions
 - **Relational vs. Non-Relational:** We use standard SQL for physical discs to prevent over-booking (ACID). We use JSONB for digital game metadata and user-specific library data to allow for schema flexibility and high-read performance.
