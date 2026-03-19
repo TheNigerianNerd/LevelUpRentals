@@ -1,0 +1,6 @@
+@LevelUpBackend_HostAddress = http://localhost:5241
+
+GET {{LevelUpBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
